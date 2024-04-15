@@ -3,22 +3,22 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0b0b;
+  background: #000505;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(68, 159, 182, 0.639);
+  background: #3EBAC0;
   border-radius: 3.5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(96, 224, 255, 0.639);
+  background: #22666a;
 }
 
 .default-text-box {
-  border: rgba(96, 224, 255, 0.639) solid 2px;
+  border: #3EBAC0 solid 2px;
   border-radius: 40px;
-  background-color: #232323;
+  background-color: #000505;
   padding: 20px;
 }
 
@@ -36,6 +36,9 @@
 
 .display-font {
   font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  font-size: 96px;
+  color: #CFFCFF;
 }
 
 .background-contrast-color {
@@ -43,11 +46,11 @@
 }
 
 .background-color {
-  color: #0b0b0b;
+  color: #000505;
 }
 
 .text-color {
-  color: #bbdaec;
+  color: #CFFCFF;
 }
 
 .secondary-color {
@@ -67,7 +70,7 @@
 }
 
 .background-color-background {
-  background-color: #0b0b0b;
+  background-color: #000505;
 }
 
 .text-color-background {
@@ -89,12 +92,12 @@
 body {
   width: 100%;
   overflow-x: hidden;
-  background-color: #0b0b0b;
+  background-color: #000505;
 }
 
 #navbar-background {
-  background-color: #232323;
-  border-bottom: rgba(96, 224, 255, 0.639) solid 2px;
+  background-color: #000505;
+  border-bottom: #3EBAC0 solid 2px;
 }
 
 #logo img {
@@ -175,7 +178,7 @@ body {
 
 .topnav a {
   float: left;
-  color: #bbdaec;
+  color: #CFFCFF;
   text-align: center;
   text-decoration: none;
   display: block;
@@ -201,14 +204,14 @@ body {
 
 .skeuomorphic-buttons {
   cursor: pointer;
-  color: #CDEDFF;
+  color: #CFFCFF;
   font-weight: 700;
   transition: color 1s ease-out;
 }
 
 .skeuomorphic-buttons:hover {
   cursor: pointer;
-  color: #a2a2a2;
+  color: #3EBAC0;
 }
 
 .container-xl {
@@ -221,7 +224,7 @@ body {
 .top-row {
   margin-top: 25px;
   margin-bottom: 80px;
-  background-color: #CDEDFF;
+  background-color: #000505;
   font-size: 70px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
@@ -310,11 +313,19 @@ body {
 }
 
 #Homepage {
-  background-color: #0b0b0b;
+  background-color: #000505;
 }
 
 .navbar-brand {
   margin-right: -10px;
+}
+
+#size-p > p {
+  font-size: 25px;
+}
+
+#size-p {
+  color: #3EBAC0;
 }
   
 .heading { 
@@ -329,14 +340,19 @@ body {
 } 
   
 .timer, .errors, .accuracy, 
-.cpm, .wpm { 
-  background-color: #bbdaec; 
-  height: 60px; 
-  width: 70px; 
+.cpm, .wpm {
+  background-color: #000505;
+  border: #3EBAC0 1px solid;
+  height: 227px; 
+  width: 227px; 
   margin: 8px; 
   padding: 12px; 
-  border-radius: 20%; 
+  border-radius: 15px; 
   box-shadow: black 5px 8px 5px; 
+  color: #CFFCFF;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 } 
   
 .cpm, .wpm  { 
@@ -345,53 +361,71 @@ body {
   
 .header_text { 
   text-transform: uppercase; 
-  font-size: 0.6rem; 
+  font-size: 39px;
   font-weight: 600; 
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 } 
   
 .curr_time, .curr_errors, 
 .curr_accuracy, .curr_cpm, 
 .curr_wpm { 
-  font-size: 2.75rem; 
+  font-size: 60px;
+  font-weight: normal;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 } 
   
 .quote { 
-  background-color: #bbdaec; 
+  background-color: #000505; 
   font-size: 1.5rem; 
   margin: 10px; 
   padding: 25px; 
   box-shadow: black 5px 8px 5px; 
+  color: #CFFCFF;
+  border: #3EBAC0 1px solid;
+  width: 1000px;
+  height: 150px;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 } 
   
 .input_area { 
-  background-color: #bbdaec; 
-  height: 80px; 
-  width: 40%; 
+  background-color: #000505; 
   font-size: 1.5rem; 
-  font-weight: 600; 
   margin: 15px; 
   padding: 20px; 
   border: 0px; 
   box-shadow: black 5px 8px 5px; 
   border-radius: 20px;
+  border: #3EBAC0 1px solid;
+  color: #CFFCFF;
+  padding: 25px;
+  width: 1000px;
+  height: 150px;
 } 
   
 .restart_btn { 
   display: none; 
-  background-color: #bbdaec; 
+  background-color: #000505; 
   font-size: 1.5rem; 
   padding: 10px; 
-  border: 0px; 
+  border: #3EBAC0 1px solid;
   box-shadow: black 5px 8px 5px; 
+  color: #CFFCFF;
 } 
   
 .incorrect_char { 
-  color: red; 
+  color: rgb(217, 230, 233); 
   text-decoration: underline; 
 } 
   
 .correct_char { 
-  color: rgb(0, 61, 52); 
+  color: #3EBAC0; 
 } 
 
 .content-scrollbar-overflow-container {
