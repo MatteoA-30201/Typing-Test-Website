@@ -122,6 +122,8 @@ body {
 
   .heading-size-change {
     font-size: 15px;
+    border: #3EBAC0 solid 2px;
+    margin-bottom: 10px;
   }
 
   #logo img {
@@ -328,9 +330,17 @@ body {
   display: flex; 
   align-items: center;
   justify-content: center;
-  width: 75%
+  width: 100%
 } 
- @media (min-width: 992px) {
+
+.quote-box-size {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  width: 75%
+}
+
+@media (min-width: 992px) {
   .timer, .errors, .accuracy, 
 .cpm, .wpm {
   background-color: #000505;
@@ -376,10 +386,40 @@ body {
   justify-content: center;
   align-items: center;
 } 
-  
- }
 
- @media (max-width: 992px) {
+.quote { 
+  background-color: #000505; 
+  font-size: 1.5rem; 
+  margin: 10px; 
+  padding: 25px; 
+  box-shadow: black 5px 8px 5px; 
+  color: #CFFCFF;
+  border: #3EBAC0 1px solid;
+  height: 200px;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+} 
+  
+.input_area { 
+  background-color: #000505; 
+  font-size: 1.5rem; 
+  margin: 15px; 
+  padding: 20px; 
+  border: 0px; 
+  box-shadow: black 5px 8px 5px; 
+  border-radius: 20px;
+  border: #3EBAC0 1px solid;
+  color: #CFFCFF;
+  padding: 25px;
+  width: 1000px;
+  height: 300px;
+} 
+  
+}
+
+@media (max-width: 992px) {
   .timer, .errors, .accuracy, 
 .cpm, .wpm {
   background-color: #000505;
@@ -426,15 +466,9 @@ body {
   color: #CFFCFF;
 }
 
- }
-
-.cpm, .wpm  { 
-  display: none; 
-} 
-  
 .quote { 
   background-color: #000505; 
-  font-size: 1.5rem; 
+  font-size: 10px; 
   margin: 10px; 
   padding: 25px; 
   box-shadow: black 5px 8px 5px; 
@@ -449,7 +483,7 @@ body {
   
 .input_area { 
   background-color: #000505; 
-  font-size: 1.5rem; 
+  font-size: 10px; 
   margin: 15px; 
   padding: 20px; 
   border: 0px; 
@@ -460,6 +494,12 @@ body {
   padding: 25px;
   width: 1000px;
   height: 300px;
+} 
+
+}
+
+.cpm, .wpm  { 
+  display: none; 
 } 
   
 .restart_btn { 
@@ -489,4 +529,10 @@ body {
 
 .navbar-toggler-icon {
   border-color: #3EBAC0;
+}
+
+.title {
+  margin: 25px;
+  text-decoration: underline #3EBAC0;
+  text-underline-offset: 10px;
 }

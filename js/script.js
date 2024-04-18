@@ -3,20 +3,20 @@ let TIME_LIMIT = 60;
 
 // define quotes to be used
 let quotes_array = [
-  "Push yourself, because no one else is going to do it for you.",
-  "Failure is the condiment that gives success its flavor.",
-  "Wake up with determination. Go to bed with satisfaction.",
-  "It's going to be hard, but hard does not mean impossible.",
-  "Learning never exhausts the mind.",
-  "The only way to do great work is to love what you do."
+  "Push⠀yourself,⠀because⠀no⠀one⠀else⠀is⠀going⠀to⠀do⠀it⠀for⠀you.",
+  "Failure⠀is⠀the⠀condiment⠀that⠀gives⠀success⠀its⠀flavor.",
+  "Wake⠀up⠀with⠀determination.⠀Go⠀to⠀bed⠀with⠀satisfaction.",
+  "It's⠀going⠀to⠀be⠀hard,⠀but⠀hard⠀does⠀not⠀mean⠀impossible.",
+  "Learning⠀never⠀exhausts⠀the⠀mind.",
+  "The⠀only⠀way⠀to⠀do⠀great⠀work⠀is⠀to⠀love⠀what⠀you⠀do."
 ];
 
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
-let accuracy_text = document.querySelector(".curr_accuracy");
+let accuracy_text = document.querySelector(".curr_accuracy2");
 let error_text = document.querySelector(".curr_errors");
 let cpm_text = document.querySelector(".curr_cpm");
-let wpm_text = document.querySelector(".curr_wpm");
+let wpm_text = document.querySelector(".curr_wpm2");
 let quote_text = document.querySelector(".quote");
 let input_area = document.querySelector(".input_area");
 let restart_btn = document.querySelector(".restart_btn");
@@ -90,7 +90,7 @@ function processCurrentText() {
   });
 
   // display the number of errors
-  error_text.textContent = total_errors + errors;
+
 
   // update accuracy text
   let correctCharacters = (characterTyped - (total_errors + errors));
@@ -141,11 +141,9 @@ function finishGame() {
   restart_btn.style.display = "block";
 
   // calculate cpm and wpm
-  cpm = Math.round(((characterTyped / timeElapsed) * 60));
   wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
   // update cpm and wpm text
-  cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
 
   // display the cpm and wpm
@@ -179,6 +177,5 @@ function resetValues() {
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
   restart_btn.style.display = "none";
-  cpm_group.style.display = "none";
   wpm_group.style.display = "none";
 }
