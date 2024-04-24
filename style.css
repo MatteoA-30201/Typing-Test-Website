@@ -510,6 +510,8 @@ body {
   border: #3EBAC0 1px solid;
   box-shadow: black 5px 8px 5px; 
   color: #CFFCFF;
+  border-radius: 5px;
+  margin-bottom: 10px;
 } 
   
 .incorrect_char { 
