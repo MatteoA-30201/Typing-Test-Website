@@ -1,8 +1,18 @@
 // define the time limit
 let TIME_LIMIT = 60;
 
+
 // define quotes to be used
 let quotes_array = [
+  "Push⠀yourself,⠀because⠀no⠀one⠀else⠀is⠀going⠀to⠀do⠀it⠀for⠀you.",
+  "Failure⠀is⠀the⠀condiment⠀that⠀gives⠀success⠀its⠀flavor.",
+  "Wake⠀up⠀with⠀determination.⠀Go⠀to⠀bed⠀with⠀satisfaction.",
+  "It's⠀going⠀to⠀be⠀hard,⠀but⠀hard⠀does⠀not⠀mean⠀impossible.",
+  "Learning⠀never⠀exhausts⠀the⠀mind.",
+  "The⠀only⠀way⠀to⠀do⠀great⠀work⠀is⠀to⠀love⠀what⠀you⠀do."
+];
+
+let words_array = [
   "wolf sheep snarl slave fur outer enfix crack smile snow dog slide shop pop fling golf duck snap wound soil",
   "self mild plan row fox paper tract tent aisle node image seek baby enfix safe shout van blame equal menu",
   "claim hike four gold carve favor is stay drama lover coat stir queen pain hole thigh feast tiger an star",
@@ -34,10 +44,15 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
+let arrayToUse = quotes_array;
+
+function currentArray(theArray){
+  arrayToUse = theArray;
+}
 
 function updateQuote() {
   quote_text.textContent = null;
-  current_quote = quotes_array[quoteNo];
+  current_quote = arrayToUse[Math.floor(Math.random() * arrayToUse.length)];
 
   // separate each character and make an element 
   // out of each of them to individually style them
@@ -46,12 +61,6 @@ function updateQuote() {
     charSpan.innerText = char
     quote_text.appendChild(charSpan)
   })
-
-  // roll over to the first quote
-  if (quoteNo < quotes_array.length - 1)
-    quoteNo++;
-  else
-    quoteNo = 0;
 }
 
 function processCurrentText() {
