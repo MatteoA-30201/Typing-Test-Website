@@ -1,15 +1,14 @@
 // define the time limit
 let TIME_LIMIT = 60;
 
-
 // define quotes to be used
 let quotes_array = [
-  "Push⠀yourself,⠀because⠀no⠀one⠀else⠀is⠀going⠀to⠀do⠀it⠀for⠀you.",
-  "Failure⠀is⠀the⠀condiment⠀that⠀gives⠀success⠀its⠀flavor.",
-  "Wake⠀up⠀with⠀determination.⠀Go⠀to⠀bed⠀with⠀satisfaction.",
-  "It's⠀going⠀to⠀be⠀hard,⠀but⠀hard⠀does⠀not⠀mean⠀impossible.",
-  "Learning⠀never⠀exhausts⠀the⠀mind.",
-  "The⠀only⠀way⠀to⠀do⠀great⠀work⠀is⠀to⠀love⠀what⠀you⠀do."
+  "Push yourself, because no one else is going to do it for you.",
+  "Failure is the condiment that gives success its flavor.",
+  "Wake up with determination. Go to bed with satisfaction.",
+  "It's going to be hard, but hard does not mean impossible.",
+  "Learning never exhausts the mind.",
+  "The only way to do great work is to love what you do."
 ];
 
 let words_array = [
@@ -56,7 +55,8 @@ function updateQuote() {
 
   // separate each character and make an element 
   // out of each of them to individually style them
-  current_quote.split('').forEach(char => {
+  const current_quote_join = current_quote.split('');
+  current_quote_join.forEach(char => {
     const charSpan = document.createElement('span')
     charSpan.innerText = char
     quote_text.appendChild(charSpan)
