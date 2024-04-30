@@ -540,3 +540,8 @@ body {
   text-decoration: underline #3EBAC0;
   text-underline-offset: 10px;
 }
+
+.span-space {
+  width: 15px;
+  height: 35px;
+}

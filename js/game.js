@@ -11,21 +11,12 @@ let quotes_array = [
   "The only way to do great work is to love what you do."
 ];
 
-let words_array = [
-  "wolf sheep snarl slave fur outer enfix crack smile snow dog slide shop pop fling golf duck snap wound soil",
-  "self mild plan row fox paper tract tent aisle node image seek baby enfix safe shout van blame equal menu",
-  "claim hike four gold carve favor is stay drama lover coat stir queen pain hole thigh feast tiger an star",
-  "hurl count route add hook sand gap sign ruin creed trust plot rank will chop snap rack ranch spy park", 
-  "trap agent back nest cart bus go solo suit doubt mess elite coup throw right dorm bold sigh fool flesh", 
-  "lemon oak write clock tear look slot fate smile place spare find deal sweat gem funny hot count amuse stock"
-];
-
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
-let accuracy_text = document.querySelector(".curr_accuracy2");
+let accuracy_text = document.querySelector(".curr_accuracy");
 let error_text = document.querySelector(".curr_errors");
 let cpm_text = document.querySelector(".curr_cpm");
-let wpm_text = document.querySelector(".curr_wpm2");
+let wpm_text = document.querySelector(".curr_wpm");
 let quote_text = document.querySelector(".quote");
 let input_area = document.querySelector(".input_area");
 let restart_btn = document.querySelector(".restart_btn");
@@ -43,32 +34,24 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
-let arrayToUse = quotes_array;
-
-function currentArray(theArray){
-  arrayToUse = theArray;
-}
 
 function updateQuote() {
   quote_text.textContent = null;
-  current_quote = arrayToUse[Math.floor(Math.random() * arrayToUse.length)];
+  current_quote = quotes_array[quoteNo];
 
   // separate each character and make an element 
   // out of each of them to individually style them
-  const current_quote_join = current_quote.split('');
-  current_quote_join.forEach(char => {
+  current_quote.split('').forEach(char => {
     const charSpan = document.createElement('span')
     charSpan.innerText = char
     quote_text.appendChild(charSpan)
   })
 
-  if (document.querySelectorAll("span").innerHTML = " ") {
-    let spaceSpan = document.getElementsByTagName("span").textContent = " ";
-    function addSpaceAttribute() {
-      spaceSpan.setAttribute("class", "span-space");
-    } 
-    addSpaceAttribute();
-  }
+  // roll over to the first quote
+  if (quoteNo < quotes_array.length - 1)
+    quoteNo++;
+  else
+    quoteNo = 0;
 }
 
 function processCurrentText() {
@@ -107,7 +90,7 @@ function processCurrentText() {
   });
 
   // display the number of errors
-
+  error_text.textContent = total_errors + errors;
 
   // update accuracy text
   let correctCharacters = (characterTyped - (total_errors + errors));
@@ -166,7 +149,7 @@ function finishGame() {
   wpm_text.textContent = wpm;
 
   // display the cpm and wpm
-
+  cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 }
 
@@ -195,8 +178,8 @@ function resetValues() {
   quote_text.textContent = 'Click on the area below to start the game.';
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
-
+  error_text.textContent = 0;
   restart_btn.style.display = "none";
-
+  cpm_group.style.display = "none";
   wpm_group.style.display = "none";
 }
