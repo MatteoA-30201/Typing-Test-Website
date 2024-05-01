@@ -1,15 +1,14 @@
 // define the time limit
 let TIME_LIMIT = 60;
 
-
 // define quotes to be used
 let quotes_array = [
-  "Push⠀yourself,⠀because⠀no⠀one⠀else⠀is⠀going⠀to⠀do⠀it⠀for⠀you.",
-  "Failure⠀is⠀the⠀condiment⠀that⠀gives⠀success⠀its⠀flavor.",
-  "Wake⠀up⠀with⠀determination.⠀Go⠀to⠀bed⠀with⠀satisfaction.",
-  "It's⠀going⠀to⠀be⠀hard,⠀but⠀hard⠀does⠀not⠀mean⠀impossible.",
-  "Learning⠀never⠀exhausts⠀the⠀mind.",
-  "The⠀only⠀way⠀to⠀do⠀great⠀work⠀is⠀to⠀love⠀what⠀you⠀do."
+  "Push yourself, because no one else is going to do it for you.",
+  "Failure is the condiment that gives success its flavor.",
+  "Wake up with determination. Go to bed with satisfaction.",
+  "It's going to be hard, but hard does not mean impossible.",
+  "Learning never exhausts the mind.",
+  "The only way to do great work is to love what you do."
 ];
 
 let words_array = [
@@ -44,29 +43,24 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
-let theArray = null;
+let arrayToUse = quotes_array;
 
 function currentArray(theArray){
   arrayToUse = theArray;
 }
 
-function updateQuote(MyArray) {
+function updateQuote() {
   quote_text.textContent = null;
-  current_quote = MyArray[quoteNo];
+  current_quote = arrayToUse[Math.floor(Math.random() * arrayToUse.length)];
 
   // separate each character and make an element 
   // out of each of them to individually style them
-  current_quote.split('').forEach(char => {
+  const current_quote_join = current_quote.split('');
+  current_quote_join.forEach(char => {
     const charSpan = document.createElement('span')
     charSpan.innerText = char
     quote_text.appendChild(charSpan)
   })
-
-  // roll over to the first quote
-  if (quoteNo < MyArray.length - 1)
-    quoteNo++;
-  else
-    quoteNo = 0;
 }
 
 function processCurrentText() {
@@ -156,13 +150,13 @@ function finishGame() {
   restart_btn.style.display = "block";
 
   // calculate cpm and wpm
+  cpm = Math.round(((characterTyped / timeElapsed) * 60));
   wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
   // update cpm and wpm text
   wpm_text.textContent = wpm;
 
   // display the cpm and wpm
-  cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 }
 
@@ -170,7 +164,7 @@ function finishGame() {
 function startGame() {
 
   resetValues();
-  updateQuote(MyArray);
+  updateQuote();
 
   // clear old and start a new timer
   clearInterval(timer);
@@ -191,8 +185,6 @@ function resetValues() {
   quote_text.textContent = 'Click on the area below to start the game.';
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
-  error_text.textContent = 0;
   restart_btn.style.display = "none";
-  cpm_group.style.display = "none";
   wpm_group.style.display = "none";
 }
