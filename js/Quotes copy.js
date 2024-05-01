@@ -61,14 +61,6 @@ function updateQuote() {
     charSpan.innerText = char
     quote_text.appendChild(charSpan)
   })
-
-  if (document.querySelectorAll("span").innerHTML = " ") {
-    let spaceSpan = document.getElementsByTagName("span").textContent = " ";
-    function addSpaceAttribute() {
-      spaceSpan.setAttribute("class", "span-space");
-    } 
-    addSpaceAttribute();
-  }
 }
 
 function processCurrentText() {
@@ -162,11 +154,9 @@ function finishGame() {
   wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
   // update cpm and wpm text
-  cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
 
   // display the cpm and wpm
-
   wpm_group.style.display = "block";
 }
 
@@ -195,8 +185,6 @@ function resetValues() {
   quote_text.textContent = 'Click on the area below to start the game.';
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
-
   restart_btn.style.display = "none";
-
   wpm_group.style.display = "none";
 }
